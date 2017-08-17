@@ -53,7 +53,7 @@
     "react-dom": "^15.2.1"
   },
   "dependencies": {
-    "formsy-material-ui": "=0.5.0",
+    "formsy-material-ui": "github:ChargeAfter/formsy-material-ui#fixed-label",
     "formsy-react": "^0.18.1",
     "lodash": "^4.14.1",
     "material-ui": "^0.15.3",

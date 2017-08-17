@@ -60,7 +60,7 @@ class CardForm extends Component {
 
     const style = _.extend(defaultStyle, this.props.style)
 
-    const { defaultValues, label } = this.props;
+    const { defaultValues, buttonLabel } = this.props;
 
     return (
       <Formsy.Form
@@ -93,6 +93,8 @@ class CardForm extends Component {
               return Payment.fns.validateCardNumber(card)
             }
           }}
+          floatingLabelFixed
+          floatingLabelText="Card Number"
           validationError="Invalid card number"
           className="cc-number"
           defaultValue={defaultValues.number}
@@ -104,6 +106,8 @@ class CardForm extends Component {
           ref="expiration"
           type="tel"
           hintText="MM / YY"
+          floatingLabelFixed
+          floatingLabelText="Expiration Date"
           validations={{
             isValid: (otherValues, expiration) => {
               if (!expiration) {
@@ -125,6 +129,8 @@ class CardForm extends Component {
           ref="cvc"
           type="tel"
           hintText="CVC"
+          floatingLabelFixed
+          floatingLabelText="Security Code"
           validations={{
             isNumeric: true,
             rightLength: (otherValues, cvc) => {
@@ -158,7 +164,7 @@ class CardForm extends Component {
         }
         <RaisedButton
           type="submit"
-          label={(label || "add card")}
+          label={(buttonLabel || "add card")}
           disabled={!this.state.canSubmit}
           style={_.extend({
             width: 175,
