@@ -93,7 +93,7 @@ class CardForm extends Component {
               return Payment.fns.validateCardNumber(card)
             }
           }}
-          floatingLabelFixed
+          floatingLabelFixed={true}
           floatingLabelText="Card Number"
           validationError="Invalid card number"
           className="cc-number"
@@ -106,7 +106,7 @@ class CardForm extends Component {
           ref="expiration"
           type="tel"
           hintText="MM / YY"
-          floatingLabelFixed
+          floatingLabelFixed={true}
           floatingLabelText="Expiration Date"
           validations={{
             isValid: (otherValues, expiration) => {
@@ -129,7 +129,7 @@ class CardForm extends Component {
           ref="cvc"
           type="tel"
           hintText="CVC"
-          floatingLabelFixed
+          floatingLabelFixed={true}
           floatingLabelText="Security Code"
           validations={{
             isNumeric: true,
