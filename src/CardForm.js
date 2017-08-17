@@ -128,7 +128,7 @@ class CardForm extends Component {
           name="cvc"
           ref="cvc"
           type="tel"
-          hintText="CVC"
+          hintText="CVC/CVV"
           floatingLabelFixed={true}
           floatingLabelText="Security Code"
           validations={{
