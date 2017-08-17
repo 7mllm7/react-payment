@@ -128,7 +128,7 @@ var CardForm = function (_Component) {
 
       var _props = this.props,
           defaultValues = _props.defaultValues,
-          label = _props.label;
+          buttonLabel = _props.buttonLabel;
 
 
       return _react2.default.createElement(
@@ -158,6 +158,8 @@ var CardForm = function (_Component) {
               return _payment2.default.fns.validateCardNumber(card);
             }
           },
+          floatingLabelFixed: true,
+          floatingLabelText: 'Card Number',
           validationError: 'Invalid card number',
           className: 'cc-number',
           defaultValue: defaultValues.number,
@@ -169,6 +171,8 @@ var CardForm = function (_Component) {
           ref: 'expiration',
           type: 'tel',
           hintText: 'MM / YY',
+          floatingLabelFixed: true,
+          floatingLabelText: 'Expiration Date',
           validations: {
             isValid: function isValid(otherValues, expiration) {
               if (!expiration) {
@@ -193,6 +197,8 @@ var CardForm = function (_Component) {
           ref: 'cvc',
           type: 'tel',
           hintText: 'CVC',
+          floatingLabelFixed: true,
+          floatingLabelText: 'Security Code',
           validations: {
             isNumeric: true,
             rightLength: function rightLength(otherValues, cvc) {
@@ -221,7 +227,7 @@ var CardForm = function (_Component) {
         }) : '',
         _react2.default.createElement(_RaisedButton2.default, {
           type: 'submit',
-          label: label || "add card",
+          label: buttonLabel || "add card",
           disabled: !this.state.canSubmit,
           style: _lodash2.default.extend({
             width: 175,
